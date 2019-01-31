@@ -1,1 +1,1 @@
-https://github.com/solidsnack/pglite
+https://github.com/solidsnack/pglite directory based postgresql
