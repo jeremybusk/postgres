@@ -9,3 +9,6 @@ echo "deb http://apt.postgresql.org/pub/repos/apt/ ${RELEASE}"-pgdg main | sudo 
 sudo apt update
 sudo apt -y install pgadmin4 pgadmin4-apache2
 # Setup initial user/pass combo for http ui
+sudo a2enmod ssl
+systemctl resetart apache2
+# You will want to add your own ssl cert
