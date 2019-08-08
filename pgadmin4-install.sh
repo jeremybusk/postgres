@@ -11,4 +11,10 @@ sudo apt -y install pgadmin4 pgadmin4-apache2
 # Setup initial user/pass combo for http ui
 sudo a2enmod ssl
 systemctl resetart apache2
-# You will want to add your own ssl cert
+
+# You will want to add your own ssl cert if not using certbot
+vi /etc/apache2/sites-available/default-ssl.conf
+SSLCertificateFile /etc/letsencrypt/live/example.io/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/example.io/privkey.pem
+ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/ # if issues with buster
+systemctl resetart apache2
